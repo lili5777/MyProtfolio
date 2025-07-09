@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve" width="64px" height="64px">
+  <g>
+    <!-- Siluet Pengajar dengan Papan Tulis -->
+    <circle cx="32" cy="18" r="8" fill="#000000"/> <!-- Kepala -->
+    <rect x="16" y="30" width="32" height="20" fill="#000000"/> <!-- Badan (papan tulis) -->
+    <line x1="32" y1="50" x2="32" y2="62" stroke="#000000" stroke-width="2"/> <!-- Kaki kiri -->
+    <line x1="28" y1="50" x2="28" y2="62" stroke="#000000" stroke-width="2"/> <!-- Kaki kanan -->
+    <line x1="32" y1="30" x2="16" y2="38" stroke="#000000" stroke-width="2"/> <!-- Tangan kiri (menunjuk papan) -->
+    <line x1="32" y1="30" x2="48" y2="38" stroke="#000000" stroke-width="2"/> <!-- Tangan kanan (menunjuk papan) -->
+  </g>
+</svg>
