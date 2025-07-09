@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('about',1000)->nullable();
             $table->string('document')->nullable();
             $table->string('job')->nullable();
+            $table->string('photo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

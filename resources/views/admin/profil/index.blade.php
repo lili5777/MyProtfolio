@@ -24,16 +24,16 @@
                 </button>
             </div>
                 <div class="avatar-container">
-                    <img src="{{asset('assets/imgs/teen.png')}}" alt="Profile" class="profile-avatar" id="profile-avatar">
+                    <img src="{{$user->photo ? asset('assets/imgs/' . $user->photo) : asset('assets/imgs/teen.png')}}" alt="Profile" class="profile-avatar" id="profile-avatar">
                     {{-- <button class="avatar-edit-btn" id="avatar-edit-btn">
                         <i class="ti-camera"></i>
                     </button> --}}
                 </div>
                 <div class="profile-info">
-                    <h1 class="profile-name">John Doe</h1>
+                    <h1 class="profile-name">{{$user->name}}</h1>
                     {{-- <p class="profile-title">Web Developer & UI Designer</p> --}}
                     <span class="profile-badge">
-                        <i class="ti-star"></i> Web Developer
+                        <i class="ti-star"></i> {{$user->job ? $user->job : "Belum ada Job"}}
                     </span>
                 </div>
 
@@ -50,8 +50,7 @@
                         </button>
                     </div>
                     <div class="about-text">
-                        <p>Saya seorang web developer dengan pengalaman lebih dari 5 tahun dalam membangun aplikasi web modern. Spesialisasi saya meliputi pengembangan frontend menggunakan React.js dan Vue.js, serta pengembangan backend dengan Node.js dan Laravel.</p>
-                        <p>Saya sangat passionate tentang menciptakan pengalaman pengguna yang menarik dan solusi teknologi yang inovatif. Di waktu luang, saya suka berkontribusi ke proyek open source dan belajar teknologi baru.</p>
+                        <p>{{ $user->about ?: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.' }}</p>
                     </div>
                 </div>
 
@@ -80,23 +79,28 @@
                     <div class="section-header">
                         <h3 class="section-title">Documents</h3>
                     </div>
+                    @if ($user->document)
                     <div class="file-card">
                         <div class="file-icon">
                             <i class="ti-file"></i>
                         </div>
                         <div class="file-info">
                             <div class="file-name">My_Resume.pdf</div>
-                            <div class="file-size">2.4 MB</div>
+                            {{-- <div class="file-size">2.4 MB</div> --}}
                         </div>
                         <div class="file-actions">
                             <button class="file-action-btn" title="Download">
                                 <i class="ti-download"></i>
                             </button>
-                            <button class="file-action-btn" title="Delete">
+                            {{-- <button class="file-action-btn" title="Delete">
                                 <i class="ti-trash"></i>
-                            </button>
+                            </button> --}}
                         </div>
                     </div>
+                    @else
+                        Belum di upload
+                    @endif
+                    
                 </div>
 
                 <!-- Experience Section -->
