@@ -5,19 +5,19 @@
         <span class="ti-close menu-toggle" id="sidebar-close"></span>
     </div>
     <ul class="sidebar-menu">
-        <li>
+        <li class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
             <a href="{{route('dashboard')}}">
                 <i class="ti-dashboard"></i>
                 <span>Dashboard</span>
             </a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('profile.index') ? 'active' : '' }}">
             <a href="{{route('profile.index')}}">
                 <i class="ti-user"></i>
                 <span>Users</span>
             </a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('service.index') ? 'active' : '' }}">
             <a href="{{route('service.index')}}">
                 <i class="ti-package"></i>
                 <span>Services</span>

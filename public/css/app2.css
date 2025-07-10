@@ -288,6 +288,25 @@ body {
     color: var(--dark-color);
 }
 
+.sidebar li.active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #667eea;
+    
+}
+
+.sidebar li.active a {
+    /* color: #fff; */
+    font-weight: 500;
+}
+
+.sidebar li.active i {
+    color: #667eea;
+}
+
+.sidebar li.active span {
+    color: #667eea;
+}
+
 /* Modern Profile Styles */
 .profile-container {
     display: flex;
