@@ -73,7 +73,7 @@
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder">
-                    <img src="{{asset('assets/imgs/lili.jpeg')}}" class="about-img" data-aos="fade-right" data-aos-duration="1000"
+                    <img src="{{asset('assets/img/' . $user->photo)}}" class="about-img" data-aos="fade-right" data-aos-duration="1000"
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="about-caption">
@@ -81,14 +81,9 @@
                     <h2 class="section-title mb-3" data-aos="fade-down" data-aos-delay="300" data-aos-duration="1000">
                         About Me</h2>
                     <p data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
-                        I am a highly motivated individual with a strong enthusiasm for learning and working on various
-                        projects. With
-                        experience as a freelance web developer, I possess solid technical skills and the ability to
-                        work independently as well
-                        as part of a team. I believe that
-                        effective collaboration and good communication are key to achieving the best results.
+                        {{$user->about}}
                     </p>
-                    <a href="{{asset('assets/doc/cvku.pdf')}}" download="MY_CV.pdf" class="btn-rounded btn btn-outline-primary mt-4"
+                    <a href="{{asset('assets/doc/' . $user->document)}}" download="MY_CV.pdf" class="btn-rounded btn btn-outline-primary mt-4"
                         data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">Download CV</a>
                 </div>
             </div><!-- end of about wrapper -->
@@ -695,8 +690,8 @@
 
     <script>
         var typed = new Typed(".writext", {
-            strings: ["Muhammad Ali Ferdiansyah", "Web Developer", "Front-end Developer"],
-            typeSpeed: 100,
+            strings: ["{{$user->name}}", "{{$user->job}}"],
+            typeSpeed: 150,
             backSpeed: 100,
             loop: true,
             startDelay: 500,

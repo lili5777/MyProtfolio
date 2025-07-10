@@ -6,7 +6,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $user = User::first();
+    return view('welcome',compact('user'));
 });
 
 Route::get('/dashboard', function () {
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
 
     // profil
     Route::get('/profile', [ProfilController::class, 'index'])->name('profile.index');
+    Route::post('/profile/{id}', [ProfilController::class, 'update'])->name('profile.update');
 });
 
 require __DIR__ . '/auth.php';
