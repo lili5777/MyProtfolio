@@ -46,9 +46,9 @@
                 <div class="profile-section">
                     <div class="section-header">
                         <h3 class="section-title">About Me</h3>
-                        <button class="edit-btn" id="edit-about-btn">
+                        {{-- <button class="edit-btn" id="edit-about-btn">
                             <i class="ti-pencil"></i> Edit
-                        </button>
+                        </button> --}}
                     </div>
                     <div class="about-text">
                         <p>{{ $user->about ?: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.' }}

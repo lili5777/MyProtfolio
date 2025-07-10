@@ -41,7 +41,7 @@
                 <span>Blog</span>
             </a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('logout') ? 'active' : '' }}">
             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="ti-power-off"></i>
                 <span>Logout</span>
