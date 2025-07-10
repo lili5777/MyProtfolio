@@ -2,12 +2,14 @@
 
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Service;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $user = User::first();
-    return view('welcome',compact('user'));
+    $service = Service::all();
+    return view('welcome', compact('user', 'service'));
 });
 
 Route::get('/dashboard', function () {

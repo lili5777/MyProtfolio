@@ -97,70 +97,21 @@
             <h6 class="section-title mb-6">Service</h6>
             <!-- row -->
             <div class="row">
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="{{asset('assets/imgs/responsive.svg')}}"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Web Developer</h6>
-                            <p class="subtitle">My role as a web developer involves designing and developing responsive
-                                and user-friendly web applications.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="{{asset('assets/imgs/teacher.png')}}"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Teacher</h6>
-                            <p class="subtitle">As a teacher, my main task is to ensure that the knowledge I receive is
-                                truly accessible
-                                and useful.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="{{asset('assets/imgs/pencil-case.svg')}}"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Writer</h6>
-                            <p class="subtitle">As a writer, I am responsible for creating engaging and informative
-                                content for various
-                                media platforms.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="{{asset('assets/imgs/analytics.svg')}}"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Marketing</h6>
-                            <p class="subtitle">Leading digital marketing strategies to enhance visibility and
-                                conversion across online
-                                platforms.</p>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="service-card">
-                        <div class="body">
-                            <img src="{{asset('assets/imgs/music.png')}}"
-                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
-                                class="icon">
-                            <h6 class="title">Speaker</h6>
-                            <p class="subtitle">As a speaker, my main task is to ensure that the information I present
-                                is truly accessible and valuable to my audience.</p>
+                @foreach ($service as $sv)
+                    <div class="col-md-6 col-lg-3 mb-4">
+                        <div class="service-card">
+                            <div class="body">
+                                <img src="{{asset('assets/imgs/'.$sv->icon)}}"
+                                    alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
+                                    class="icon">
+                                <h6 class="title">{{$sv->name}}</h6>
+                                <p class="subtitle">{{$sv->desc}}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
+                
 
 
             </div><!-- end of row -->
