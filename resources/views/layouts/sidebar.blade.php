@@ -18,7 +18,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="{{route('service.index')}}">
                 <i class="ti-package"></i>
                 <span>Services</span>
             </a>
