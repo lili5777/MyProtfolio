@@ -23,8 +23,8 @@
                 <span>Services</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li class="{{ request()->routeIs('skills.index') ? 'active' : '' }}">
+            <a href="{{route('skills.index')}}">
                 <i class="ti-star"></i>
                 <span>Skills</span>
             </a>

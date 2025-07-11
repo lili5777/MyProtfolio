@@ -102,7 +102,7 @@
                     <div class="col-md-6 col-lg-3 mb-4">
                         <div class="service-card">
                             <div class="body">
-                                <img src="{{asset('assets/imgs/'.$sv->icon)}}"
+                                <img src="{{asset('assets/imgs/' . $sv->icon)}}"
                                     alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page"
                                     class="icon">
                                 <h6 class="title">{{$sv->name}}</h6>
@@ -125,83 +125,16 @@
             <h6 class="section-title mb-6">Skills</h6>
             <!-- row -->
             <div class="row">
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">Algorthms</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
+                @foreach ($skill as $s)
+                    <div class="col-md-6 col-lg-3 my-2">
+                        <h6 class="title">{{$s->name}}</h6>
+                        <div class="progress mt-2 mb-3">
+                            <div class="progress-bar" role="progressbar" style="width: {{$s->progress}}%;background-color: {{$s->color}}" aria-valuenow="25" aria-valuemin="0"
+                                aria-valuemax="100"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">PHP</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">javascript</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">MySQL</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 70%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">java</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">C++</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">Laravel</h6>
-                    <div class="progress mt-2 mb-3 ">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 90%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">React Native</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-secondary" role="progressbar" style="width: 50%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">CSS</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">Boostrap</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 my-2">
-                    <h6 class="title">Tailwind CSS</h6>
-                    <div class="progress mt-2 mb-3">
-                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="25"
-                            aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
+                @endforeach
+                
             </div><!-- end of row -->
         </div>
     </section><!-- end of skills -->
