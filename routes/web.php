@@ -35,7 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/services/{id}/edit', [ServiceController::class, 'edit'])->name('services.edit');
     Route::put('/services/{id}', [ServiceController::class, 'update'])->name('services.update');
 
-    // skilld
+    // skilld route
     Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
     Route::post('/skills', [SkillController::class, 'store'])->name('skills.store');
     Route::get('/skills/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
