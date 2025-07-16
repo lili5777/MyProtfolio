@@ -13,8 +13,8 @@ use PHPUnit\Architecture\Services\ServiceContainer;
 Route::get('/', function () {
     $user = User::first();
     $service = Service::all();
-    $skill=Skill::all();
-    return view('welcome', compact('user', 'service','skill'));
+    $skill = Skill::all();
+    return view('welcome', compact('user', 'service', 'skill'));
 });
 
 Route::get('/dashboard', function () {
@@ -24,11 +24,11 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    // profil
+    // profil route
     Route::get('/profile', [ProfilController::class, 'index'])->name('profile.index');
     Route::post('/profile/{id}', [ProfilController::class, 'update'])->name('profile.update');
 
-    // service
+    // service route
     Route::get('/service', [ServiceController::class, 'index'])->name('service.index');
     Route::post('/service', [ServiceController::class, 'store'])->name('service.store');
     Route::delete('/service/{id}', [ServiceController::class, 'hapus'])->name('service.hapus');
