@@ -18,18 +18,19 @@ Route::get('/', function () {
     $user = User::first();
     $service = Service::all();
     $skill = Skill::all();
-    $projek=Project::all();
-    return view('welcome', compact('user', 'service', 'skill','projek'));
+    $projek = Project::all();
+    $blog = Blog::latest()->limit(3)->get();
+    return view('welcome', compact('user', 'service', 'skill', 'projek', 'blog'));
 });
 Route::get('/projekdetail/{id}', [ProjectController::class, 'detailproject'])->name('detailproject');
 
 Route::get('/dashboard', function () {
     $user = User::first();
-    $service = Service::count();;
-    $skill = Skill::count();;
-    $projek = Project::count();;
-    $blog= Blog::count();
-    return view('dashboard', compact('user','service','skill','projek','blog'));
+    $service = Service::count();
+    $skill = Skill::count();
+    $projek = Project::count();
+    $blog = Blog::count();
+    return view('dashboard', compact('user', 'service', 'skill', 'projek', 'blog'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -63,7 +64,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('blogs', BlogController::class);
     Route::post('/blogs/{id}/komentar', [BlogController::class, 'komentar'])->name('blogs.komentar');
     Route::post('/blogs/{id}/like', [BlogController::class, 'like'])->name('blogs.like');
-    
 });
 
 require __DIR__ . '/auth.php';

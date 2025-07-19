@@ -12,6 +12,28 @@
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="{{asset('assets/css/meyawo.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Default: Persegi (1:1) di Desktop */
+.blog-img-container {
+    width: 100%;
+    aspect-ratio: 1/1; /* Rasio persegi */
+    overflow: hidden;
+}
+
+.blog-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pastikan gambar ter-crop dengan rapi */
+    object-position: center;
+}
+
+/* Di Mobile (lebar < 768px), ubah ke persegi panjang (16:9) */
+@media (max-width: 767.98px) {
+    .blog-img-container {
+        aspect-ratio: 16/12; /* Rasio wide (16:9) di mobile */
+    }
+}
+    </style>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -149,7 +171,7 @@
 
                 @foreach ($projek as $pro)
                     <div class="col-md-4 mb-4">
-                        <a href="{{route('detailproject',$pro->id)}}" class="portfolio-card">
+                        <a href="{{route('detailproject', $pro->id)}}" class="portfolio-card">
                             <img class="portfolio-card-img" src="{{ asset($pro->photo) }}" class="img-responsive rounded"
                                 alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                             <span class="portfolio-card-overlay">
@@ -393,65 +415,34 @@
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Blog</h6>
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="{{asset('assets/imgs/artikel1.jpg')}}" class="blog-card-img"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Mengenal Artificial Intelligence (Kecerdasan Buatan)</h6>
 
-                        <p class="blog-card-caption">
-                            <a href="#">By: Ferdiansyah</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 234</a>
-                            <a href="#"><i class="ti-comment"></i> 123</a>
-                        </p>
-                        <p>Saat ini, teknologi AI semakin berkembang dan digunakan dalam berbagai bidang, seperti
-                            otomotif, kesehatan, pelayanan
-                            pelanggan, keuangan, dan lain-lain. Meskipun masih banyak tantangan dan risiko yang terkait
-                            dengan pengembangan
-                            teknologi AI, namun potensi manfaatnya sangat besar sehingga banyak perusahaan dan negara
-                            yang mulai memanfaatkan
-                            teknologi AI untuk berbagai keperluan.</p>
+            @foreach ($blog as $b)
+                <!-- blog-wrapper -->
+                <div class="blog-card">
+                    <div class="blog-card-header">
+                        <div class="blog-img-container">
+                            <img src="{{ $b->foto }}" alt="{{ $b->judul }}" class="blog-img">
+                        </div>
+                    </div>
+                    <div class="blog-card-body">
+                        <h5 class="blog-card-title">{{$b->judul}}</h5>
 
-                        <a href="https://desaplembutan.gunungkidulkab.go.id/first/artikel/2059-Mengenal-Artificial-Intelligence--Kecerdasan-Buatan-"
-                            class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
+                            <p class="blog-card-caption">
+                                <a href="#">By: {{$b->penulis}}</a>
+                                <a href="#"><i class="ti-heart text-danger"></i> {{$b->like}}</a>
+                                <a href="#"><i class="ti-comment"></i> {{$b->komentars->count()}}</a>
+                                <a href="#"><i class="ti-eye"></i> {{ $b->view }}</a>
+                            </p>
+                            <p>{{ Str::limit(strip_tags($b->isi), 120) }}</p>
 
-            <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="{{asset('assets/imgs/artikel2.jpg')}}" class="blog-card-img"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Pentingnya Menjamin Keamanan Data</h6>
+                            <a href="https://desaplembutan.gunungkidulkab.go.id/first/artikel/2059-Mengenal-Artificial-Intelligence--Kecerdasan-Buatan-"
+                                class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
+                    </div>
+                </div><!-- end of blog wrapper -->
 
-                        <p class="blog-card-caption">
-                            <a href="#">By: Ferdiansyah</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                            <a href="#"><i class="ti-comment"></i> 264</a>
-                        </p>
-
-                        <p>Keamanan data bagi suatu bisnis harus terjamin. Untuk mengupas lebih dalam mengenai keamanan
-                            data atau data security,
-                            pengetahuan tentang objek yang akan dibahas yaitu data sangatlah penting. Menurut Computer
-                            Hope, data merupakan beberapa
-                            karakter yang dikumpulkan untuk tujuan tertentu. Sementara itu, Techtarget mengartikan data
-                            sebagai informasi yang sudah
-                            mengalami perubahan bentuk agar lebih efisien ketika akan dipindah atau diproses lebih
-                            lanjut. Dari pengertian tersebut,
-                            maka bisa disimpulkan bahwa data adalah subjek yang terdiri dari satu karakter atau lebih
-                            yang memiliki nilai
-                            kuantitatif maupun kualitatif sehingga dapat dipindah atau bahkan diproses lebih lanjut.</p>
-
-                        <a href="https://verihubs.com/blog/keamanan-data/" class="blog-card-link">Read more <i
-                                class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
+            @endforeach
+            
+           
         </div><!-- end of container -->
     </section><!-- end of blog section -->
 
