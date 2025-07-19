@@ -147,19 +147,23 @@
             <!-- row -->
             <div class="row">
 
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="{{asset('assets/imgs/cv.png')}}" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Templates CV</h5>
-                                    <p class="font-weight-normal">Facilitating a job applicant in creating a resume.</p>
+                @foreach ($projek as $pro)
+                    <div class="col-md-4 mb-4">
+                        <a href="{{route('detailproject',$pro->id)}}" class="portfolio-card">
+                            <img class="portfolio-card-img" src="{{ asset($pro->photo) }}" class="img-responsive rounded"
+                                alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
+                            <span class="portfolio-card-overlay">
+                                <span class="portfolio-card-caption">
+                                    <h4>{{$pro->name}}</h5>
+                                        <p class="font-weight-normal">{{$pro->desc}}</p>
+                                </span>
                             </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
+                        </a>
+                    </div>
+                @endforeach
+
+                
+                {{-- <div class="col-md-4 mb-4">
                     <a href="#" class="portfolio-card">
                         <img class="portfolio-card-img" src="{{asset('assets/imgs/htl.png')}}" class="img-responsive rounded"
                             alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
@@ -234,8 +238,6 @@
                         </span>
                     </a>
                 </div>
-
-
                 <div class="col-md-4 mb-4">
                     <a href="https://zailyconvertion.netlify.app" class="portfolio-card">
                         <img src="{{asset('assets/imgs/conversionn.png')}}" class="portfolio-card-img"
@@ -250,7 +252,6 @@
                         </span>
                     </a>
                 </div>
-
                 <div class="col-md-4 mb-4">
                     <a href="#" class="portfolio-card">
                         <img src="{{asset('assets/imgs/porto9.png')}}" class="portfolio-card-img"
@@ -262,7 +263,7 @@
                             </span>
                         </span>
                     </a>
-                </div>
+                </div> --}}
 
 
 

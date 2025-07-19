@@ -29,8 +29,8 @@
                 <span>Skills</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li class="{{ request()->routeIs('projects.*') ? 'active' : '' }}">
+            <a href="{{ route('projects.index') }}">
                 <i class="ti-briefcase"></i>
                 <span>Projects</span>
             </a>

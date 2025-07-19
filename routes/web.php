@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
+use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
 use App\Models\User;
@@ -14,8 +16,10 @@ Route::get('/', function () {
     $user = User::first();
     $service = Service::all();
     $skill = Skill::all();
-    return view('welcome', compact('user', 'service', 'skill'));
+    $projek=Project::all();
+    return view('welcome', compact('user', 'service', 'skill','projek'));
 });
+Route::get('/projekdetail/{id}', [ProjectController::class, 'detailproject'])->name('detailproject');
 
 Route::get('/dashboard', function () {
     $user = User::first();
@@ -41,6 +45,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/skills/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
     Route::put('/skills/{id}', [SkillController::class, 'update'])->name('skills.update');
     Route::delete('/skills/{id}', [SkillController::class, 'destroy'])->name('skills.destroy');
+
+
+    // projek route
+    // Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
+    Route::post('/ckeditor/upload', [ProjectController::class, 'upload'])->name('ckeditor.upload');
+    Route::resource('projects', ProjectController::class);
+    
 });
 
 require __DIR__ . '/auth.php';
