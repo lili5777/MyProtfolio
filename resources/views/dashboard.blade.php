@@ -18,7 +18,7 @@
                 <div class="card-header">
                     <div>
                         <p class="card-title">Blogs</p>
-                        <h3 class="card-value">1,254</h3>
+                        <h3 class="card-value">{{$blog}}</h3>
                     </div>
                     <div class="card-icon users">
                         <i class="ti-user"></i>
@@ -30,7 +30,7 @@
                 <div class="card-header">
                     <div>
                         <p class="card-title">Services</p>
-                        <h3 class="card-value">24</h3>
+                        <h3 class="card-value">{{$service}}</h3>
                     </div>
                     <div class="card-icon services">
                         <i class="ti-package"></i>
@@ -42,7 +42,7 @@
                 <div class="card-header">
                     <div>
                         <p class="card-title">Projects</p>
-                        <h3 class="card-value">56</h3>
+                        <h3 class="card-value">{{$projek}}</h3>
                     </div>
                     <div class="card-icon projects">
                         <i class="ti-briefcase"></i>

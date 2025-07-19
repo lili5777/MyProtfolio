@@ -35,8 +35,8 @@
                 <span>Projects</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li class="{{ request()->routeIs('blogs.*') ? 'active' : '' }}">
+            <a href="{{ route('blogs.index') }}">
                 <i class="ti-book"></i>
                 <span>Blog</span>
             </a>

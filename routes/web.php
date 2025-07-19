@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
+use App\Models\Blog;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Skill;
@@ -23,7 +25,11 @@ Route::get('/projekdetail/{id}', [ProjectController::class, 'detailproject'])->n
 
 Route::get('/dashboard', function () {
     $user = User::first();
-    return view('dashboard', compact('user'));
+    $service = Service::count();;
+    $skill = Skill::count();;
+    $projek = Project::count();;
+    $blog= Blog::count();
+    return view('dashboard', compact('user','service','skill','projek','blog'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -51,6 +57,12 @@ Route::middleware('auth')->group(function () {
     // Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
     Route::post('/ckeditor/upload', [ProjectController::class, 'upload'])->name('ckeditor.upload');
     Route::resource('projects', ProjectController::class);
+
+    //blog
+    Route::post('/ckeditor/upload', [BlogController::class, 'upload'])->name('ckeditor.upload');
+    Route::resource('blogs', BlogController::class);
+    Route::post('/blogs/{id}/komentar', [BlogController::class, 'komentar'])->name('blogs.komentar');
+    Route::post('/blogs/{id}/like', [BlogController::class, 'like'])->name('blogs.like');
     
 });
 
