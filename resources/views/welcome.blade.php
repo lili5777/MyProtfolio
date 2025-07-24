@@ -26,7 +26,7 @@
     object-position: center;
 }
 
-/* Di Mobile (lebar < 768px), ubah ke persegi panjang (16:9) */
+/* ukuran mobile */
 @media (max-width: 767.98px) {
     .blog-img-container {
         aspect-ratio: 16/12; /* Rasio wide (16:9) di mobile */
