@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{asset('assets/css/meyawo.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-        /* Default: Persegi (1:1) di Desktop */
 .blog-img-container {
     width: 100%;
     aspect-ratio: 1/1; /* Rasio persegi */
