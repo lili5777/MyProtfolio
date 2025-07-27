@@ -55,7 +55,6 @@ Route::middleware('auth')->group(function () {
 
 
     // projek route
-    // Route::get('/projects', [ProjectController::class, 'index'])->name('project.index');
     Route::post('/ckeditor/upload', [ProjectController::class, 'upload'])->name('ckeditor.upload');
     Route::resource('projects', ProjectController::class);
 
