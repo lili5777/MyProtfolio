@@ -32,6 +32,80 @@
         aspect-ratio: 16/12; /* Rasio wide (16:9) di mobile */
     }
 }
+/* Certificate Carousel Styles */
+    #certificates {
+        background-color: #f8f9fa;
+        padding: 60px 0;
+    }
+    
+    .certificate-card {
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+    }
+    
+    .certificate-img {
+        height: 500px;
+        object-fit: contain;
+        background: #f5f5f5;
+    }
+    
+    .certificate-caption {
+        padding: 20px;
+        background: white;
+    }
+    
+    .certificate-caption h5 {
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .certificate-caption p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 5%;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-size: 50%;
+    }
+    
+    .carousel-indicators li {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .carousel-indicators .active {
+        background-color: #007bff;
+    }
+    
+    @media (max-width: 768px) {
+        .certificate-img {
+            height: 300px;
+        }
+         .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        width: 40px;
+        height:20px;
+        background-size: 50%;
+    }
+    }
     </style>
 </head>
 
@@ -183,113 +257,6 @@
                     </div>
                 @endforeach
 
-                
-                {{-- <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="{{asset('assets/imgs/htl.png')}}" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Booking Hotel</h5>
-                                    <p class="font-weight-normal">To make it easy for visitors to book their dream room.
-                                    </p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="{{asset('assets/imgs/porto3.png')}}" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Online Exam Management</h5>
-                                    <p class="font-weight-normal">Doing class activities and scheduling exams</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="https://arsip.iainpare.id/" class="portfolio-card">
-                        <img src="{{asset('assets/imgs/porto4.png')}}" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Agency Correspondence</h5>
-                                    <p class="font-weight-normal">archive all letters</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="{{asset('assets/imgs/drink.png')}}" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Drinks</h5>
-                                    <p class="font-weight-normal">Ordering a refreshing drink quickly.</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="{{asset('assets/imgs/tkt.png')}}" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Booking Ticket</h5>
-                                    <p class="font-weight-normal">Bus ticket booking that allows passengers to choose
-                                        their preferred
-                                        seats.</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img class="portfolio-card-img" src="{{asset('assets/imgs/rps.png')}}" class="img-responsive rounded"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Food Recipes</h5>
-                                    <p class="font-weight-normal">To see food recipes and to create food recipes.</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="https://zailyconvertion.netlify.app" class="portfolio-card">
-                        <img src="{{asset('assets/imgs/conversionn.png')}}" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>Web Convert</h4>
-                                <p class="font-weight-normal">Aiming to facilitate users in converting temperatures,
-                                    currencies, and
-                                    much more.</p>
-                            </span>
-                        </span>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <a href="#" class="portfolio-card">
-                        <img src="{{asset('assets/imgs/porto9.png')}}" class="portfolio-card-img"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                        <span class="portfolio-card-overlay">
-                            <span class="portfolio-card-caption">
-                                <h4>badminton court booking</h4>
-                                <p class="font-weight-normal">makes it easier to book a field</p>
-                            </span>
-                        </span>
-                    </a>
-                </div> --}}
-
-
-
-
-
             </div><!-- end of row -->
         </div><!-- end of container -->
     </section> <!-- end of portfolio section -->
@@ -329,84 +296,71 @@
     <!-- End of GitHub Contributions Section -->
 
 
-    <!-- pricing section -->
-    <!-- <section class="section" id="pricing">
-        <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge ?</p>
-            <h6 class="section-title mb-6">My Pricing</h6>
-            
-            <div class="pricing-wrapper">
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/scooter.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Free</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
+<!-- Certificates Section -->
+<section class="section" id="certificates">
+    <div class="container text-center">
+        <p class="section-subtitle">My Achievements</p>
+        <h6 class="section-title mb-6">Certificates</h6>
+
+        <!-- Carousel -->
+        <div id="certificateCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Certificate 1 -->
+                <div class="carousel-item active">
+                    <div class="certificate-card mx-auto">
+                        <img src="{{asset('assets/serti/genapp.jpg')}}"
+                            class="d-block w-100 certificate-img" alt="Web Development Certificate">
+                        <div class="certificate-caption">
+                            <h5>Web Development Masterclass</h5>
+                            <p>Udemy - June 2023</p>
                         </div>
                     </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>0.00/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Basic</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>9.99/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
-                </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/startup.svg"
-                            alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Premium</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p>inventore omnis</p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>99.9/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
                 </div>
 
+                <!-- Certificate 2 -->
+                <div class="carousel-item">
+                    <div class="certificate-card mx-auto">
+                        <img src="{{asset('assets/serti/ganjill.jpg')}}"
+                            class="d-block w-100 certificate-img" alt="JavaScript Certificate">
+                        <div class="certificate-caption">
+                            <h5>Advanced JavaScript</h5>
+                            <p>Coursera - March 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="carousel-item">
+                    <div class="certificate-card mx-auto">
+                        <img src="{{asset('assets/serti/genapp.jpg')}}"
+                            class="d-block w-100 certificate-img" alt="UI/UX Design Certificate">
+                        <div class="certificate-caption">
+                            <h5>UI/UX Design Fundamentals</h5>
+                            <p>Google - January 2023</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div> 
-    </section> -->
-    <!-- end of pricing section -->
+
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#certificateCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#certificateCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#certificateCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#certificateCarousel" data-slide-to="1"></li>
+                <li data-target="#certificateCarousel" data-slide-to="2"></li>
+            </ol>
+        </div>
+    </div>
+</section>
 
     <!-- blog section -->
     <section class="section" id="blog">
