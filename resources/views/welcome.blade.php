@@ -13,99 +13,104 @@
     <link rel="stylesheet" href="{{asset('assets/css/meyawo.css')}}">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
-.blog-img-container {
-    width: 100%;
-    aspect-ratio: 1/1; /* Rasio persegi */
-    overflow: hidden;
-}
-
-.blog-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Pastikan gambar ter-crop dengan rapi */
-    object-position: center;
-}
-
-/* ukuran mobile */
-@media (max-width: 767.98px) {
-    .blog-img-container {
-        aspect-ratio: 16/12; /* Rasio wide (16:9) di mobile */
-    }
-}
-/* Certificate Carousel Styles */
-    #certificates {
-        background-color: #f8f9fa;
-        padding: 60px 0;
-    }
-    
-    .certificate-card {
-        max-width: 800px;
-        margin: 0 auto;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-        background: white;
-    }
-    
-    .certificate-img {
-        height: 500px;
-        object-fit: contain;
-        background: #f5f5f5;
-    }
-    
-    .certificate-caption {
-        padding: 20px;
-        background: white;
-    }
-    
-    .certificate-caption h5 {
-        color: #333;
-        margin-bottom: 5px;
-    }
-    
-    .certificate-caption p {
-        color: #666;
-        font-size: 0.9rem;
-    }
-    
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 5%;
-    }
-    
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        background-size: 50%;
-    }
-    
-    .carousel-indicators li {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: rgba(0, 0, 0, 0.3);
-    }
-    
-    .carousel-indicators .active {
-        background-color: #007bff;
-    }
-    
-    @media (max-width: 768px) {
-        .certificate-img {
-            height: 300px;
+        .blog-img-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            /* Rasio persegi */
+            overflow: hidden;
         }
-         .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        width: 40px;
-        height:20px;
-        background-size: 50%;
-    }
-    }
+
+        .blog-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Pastikan gambar ter-crop dengan rapi */
+            object-position: center;
+        }
+
+        /* ukuran mobile */
+        @media (max-width: 767.98px) {
+            .blog-img-container {
+                aspect-ratio: 16/12;
+                /* Rasio wide (16:9) di mobile */
+            }
+        }
+
+        /* Certificate Carousel Styles */
+        #certificates {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .certificate-card {
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .certificate-img {
+            height: 500px;
+            object-fit: contain;
+            background: #f5f5f5;
+        }
+
+        .certificate-caption {
+            padding: 20px;
+            background: white;
+        }
+
+        .certificate-caption h5 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .certificate-caption p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            background-size: 50%;
+        }
+
+        .carousel-indicators li {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-indicators .active {
+            background-color: #007bff;
+        }
+
+        @media (max-width: 768px) {
+            .certificate-img {
+                height: 300px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                background-color: rgba(0, 0, 0, 0.5);
+                border-radius: 50%;
+                width: 40px;
+                height: 20px;
+                background-size: 50%;
+            }
+        }
     </style>
 </head>
 
@@ -168,7 +173,8 @@
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder">
-                    <img src="{{asset('assets/img/' . $user->photo)}}" class="about-img" data-aos="fade-right" data-aos-duration="1000"
+                    <img src="{{asset('assets/img/' . $user->photo)}}" class="about-img" data-aos="fade-right"
+                        data-aos-duration="1000"
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                 </div>
                 <div class="about-caption">
@@ -178,8 +184,9 @@
                     <p data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">
                         {{$user->about}}
                     </p>
-                    <a href="{{asset('assets/doc/' . $user->document)}}" download="MY_CV.pdf" class="btn-rounded btn btn-outline-primary mt-4"
-                        data-aos="fade-down" data-aos-delay="500" data-aos-duration="1000">Download CV</a>
+                    <a href="{{asset('assets/doc/' . $user->document)}}" download="MY_CV.pdf"
+                        class="btn-rounded btn btn-outline-primary mt-4" data-aos="fade-down" data-aos-delay="500"
+                        data-aos-duration="1000">Download CV</a>
                 </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
@@ -206,7 +213,7 @@
                         </div>
                     </div>
                 @endforeach
-                
+
 
 
             </div><!-- end of row -->
@@ -224,12 +231,13 @@
                     <div class="col-md-6 col-lg-3 my-2">
                         <h6 class="title">{{$s->name}}</h6>
                         <div class="progress mt-2 mb-3">
-                            <div class="progress-bar" role="progressbar" style="width: {{$s->progress}}%;background-color: {{$s->color}}" aria-valuenow="25" aria-valuemin="0"
-                                aria-valuemax="100"></div>
+                            <div class="progress-bar" role="progressbar"
+                                style="width: {{$s->progress}}%;background-color: {{$s->color}}" aria-valuenow="25"
+                                aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                 @endforeach
-                
+
             </div><!-- end of row -->
         </div>
     </section><!-- end of skills -->
@@ -296,71 +304,67 @@
     <!-- End of GitHub Contributions Section -->
 
 
-<!-- Certificates Section -->
-<section class="section" id="certificates">
-    <div class="container text-center">
-        <p class="section-subtitle">My Achievements</p>
-        <h6 class="section-title mb-6">Certificates</h6>
+    <!-- Certificates Section -->
+    <section class="section" id="certificates">
+        <div class="container text-center">
+            <p class="section-subtitle">My Achievements</p>
+            <h6 class="section-title mb-6">Certificates</h6>
 
-        <!-- Carousel -->
-        <div id="certificateCarousel" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-                <!-- Certificate 1 -->
-                <div class="carousel-item active">
-                    <div class="certificate-card mx-auto">
-                        <img src="{{asset('assets/serti/genapp.jpg')}}"
-                            class="d-block w-100 certificate-img" alt="Web Development Certificate">
-                        <div class="certificate-caption">
-                            <h5>Web Development Masterclass</h5>
-                            <p>Udemy - June 2023</p>
-                        </div>
+            @if($certificates->isEmpty())
+                <p class="text-muted">Sertifikat belum diupload</p>
+            @else
+                <!-- Carousel -->
+                <div id="certificateCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        @foreach($certificates as $index => $certificate)
+                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                <div class="certificate-card mx-auto">
+                                    @php
+        $ext = strtolower(pathinfo($certificate->foto, PATHINFO_EXTENSION));
+                                    @endphp
+
+                                    @if(in_array($ext, ['jpg', 'jpeg', 'png', 'gif', 'webp']))
+                                        <img src="{{ asset('assets/serti/' . $certificate->foto) }}" class="d-block w-100 certificate-img"
+                                            alt="{{ $certificate->nama }}">
+                                    @elseif($ext === 'pdf')
+                                        <embed src="{{ asset('assets/serti/' . $certificate->foto) }}" type="application/pdf"
+                                            class="d-block w-100" style="height: 500px;">
+                                    @else
+                                        <p class="text-center py-5">Format file tidak didukung</p>
+                                    @endif
+
+                                    <div class="certificate-caption">
+                                        <h5>{{ $certificate->nama }}</h5>
+                                        <p>{{ $certificate->company }} - {{ $certificate->terbit }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
+
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="#certificateCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#certificateCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        @foreach($certificates as $index => $certificate)
+                            <li data-target="#certificateCarousel" data-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}">
+                            </li>
+                        @endforeach
+                    </ol>
                 </div>
+            @endif
 
-                <!-- Certificate 2 -->
-                <div class="carousel-item">
-                    <div class="certificate-card mx-auto">
-                        <img src="{{asset('assets/serti/ganjill.jpg')}}"
-                            class="d-block w-100 certificate-img" alt="JavaScript Certificate">
-                        <div class="certificate-caption">
-                            <h5>Advanced JavaScript</h5>
-                            <p>Coursera - March 2023</p>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Certificate 3 -->
-                <div class="carousel-item">
-                    <div class="certificate-card mx-auto">
-                        <img src="{{asset('assets/serti/genapp.jpg')}}"
-                            class="d-block w-100 certificate-img" alt="UI/UX Design Certificate">
-                        <div class="certificate-caption">
-                            <h5>UI/UX Design Fundamentals</h5>
-                            <p>Google - January 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#certificateCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#certificateCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#certificateCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#certificateCarousel" data-slide-to="1"></li>
-                <li data-target="#certificateCarousel" data-slide-to="2"></li>
-            </ol>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- blog section -->
     <section class="section" id="blog">
@@ -369,16 +373,19 @@
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Blog</h6>
 
-            @foreach ($blog as $b)
-                <!-- blog-wrapper -->
-                <div class="blog-card">
-                    <div class="blog-card-header">
-                        <div class="blog-img-container">
-                            <img src="{{ $b->foto }}" alt="{{ $b->judul }}" class="blog-img">
+            @if($blog->isEmpty())
+                <p class="text-muted">Blog belum diupload</p>
+            @else
+                @foreach ($blog as $b)
+                    <!-- blog-wrapper -->
+                    <div class="blog-card">
+                        <div class="blog-card-header">
+                            <div class="blog-img-container">
+                                <img src="{{ $b->foto }}" alt="{{ $b->judul }}" class="blog-img">
+                            </div>
                         </div>
-                    </div>
-                    <div class="blog-card-body">
-                        <h5 class="blog-card-title">{{$b->judul}}</h5>
+                        <div class="blog-card-body">
+                            <h5 class="blog-card-title">{{$b->judul}}</h5>
 
                             <p class="blog-card-caption">
                                 <a href="#">By: {{$b->penulis}}</a>
@@ -390,12 +397,15 @@
 
                             <a href="https://desaplembutan.gunungkidulkab.go.id/first/artikel/2059-Mengenal-Artificial-Intelligence--Kecerdasan-Buatan-"
                                 class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                    </div>
-                </div><!-- end of blog wrapper -->
+                        </div>
+                    </div><!-- end of blog wrapper -->
 
-            @endforeach
-            
+                @endforeach
+            @endif
+
            
+
+
         </div><!-- end of container -->
     </section><!-- end of blog section -->
 

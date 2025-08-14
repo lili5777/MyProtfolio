@@ -4,10 +4,12 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SertifikatController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SkillController;
 use App\Models\Blog;
 use App\Models\Project;
+use App\Models\Sertifikat;
 use App\Models\Service;
 use App\Models\Skill;
 use App\Models\User;
@@ -20,7 +22,8 @@ Route::get('/', function () {
     $skill = Skill::all();
     $projek = Project::all();
     $blog = Blog::latest()->limit(3)->get();
-    return view('welcome', compact('user', 'service', 'skill', 'projek', 'blog'));
+    $certificates = Sertifikat::all();
+    return view('welcome', compact('user', 'service', 'skill', 'projek', 'blog', 'certificates'));
 });
 Route::get('/projekdetail/{id}', [ProjectController::class, 'detailproject'])->name('detailproject');
 
@@ -52,6 +55,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/skills/{id}/edit', [SkillController::class, 'edit'])->name('skills.edit');
     Route::put('/skills/{id}', [SkillController::class, 'update'])->name('skills.update');
     Route::delete('/skills/{id}', [SkillController::class, 'destroy'])->name('skills.destroy');
+
+    // sertifikat route
+    Route::get('/sertifikat', [SertifikatController::class, 'index'])->name('sertifikat.index');
+    Route::post('/sertifikat', [SertifikatController::class, 'store'])->name('sertifikat.store');
+    Route::delete('/sertifikat/{id}', [SertifikatController::class, 'destroy'])->name('sertifikat.destroy');
+    Route::get('/sertifikat/{id}/edit', [SertifikatController::class, 'edit'])->name('sertifikat.edit');
+    Route::put('/sertifikat/{id}', [SertifikatController::class, 'update'])->name('sertifikat.update');
 
 
     // projek route

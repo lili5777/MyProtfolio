@@ -41,6 +41,12 @@
                 <span>Blog</span>
             </a>
         </li>
+        <li class="{{ request()->routeIs('sertifikat.*') ? 'active' : '' }}">
+            <a href="{{ route('sertifikat.index') }}">
+                <i class="ti-book"></i>
+                <span>Sertifikat</span>
+            </a>
+        </li>
         <li class="{{ request()->routeIs('logout') ? 'active' : '' }}">
             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 <i class="ti-power-off"></i>
