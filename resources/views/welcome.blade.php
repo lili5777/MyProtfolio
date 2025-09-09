@@ -395,7 +395,7 @@
                             </p>
                             <p>{{ Str::limit(strip_tags($b->isi), 120) }}</p>
 
-                            <a href="https://desaplembutan.gunungkidulkab.go.id/first/artikel/2059-Mengenal-Artificial-Intelligence--Kecerdasan-Buatan-"
+                            <a href="{{ route('blogs.showuser', $b->id) }}"
                                 class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                         </div>
                     </div><!-- end of blog wrapper -->
@@ -410,7 +410,7 @@
     </section><!-- end of blog section -->
 
     <!-- section -->
-    <section class="section-sm bg-primary">
+    {{-- <section class="section-sm bg-primary">
         <!-- container -->
         <div class="container text-center text-sm-left">
             <!-- row -->
@@ -424,10 +424,11 @@
                 </div>
             </div> <!-- end of row -->
         </div> <!-- end of container -->
-    </section> <!-- end of section -->
+    </section> --}}
+    <!-- end of section -->
 
     <!-- testimonial section -->
-    <section class="section" id="testmonial">
+    {{-- <section class="section" id="testmonial">
         <div class="container text-center">
             <p class="section-subtitle">What Think Client About Me ?</p>
             <h6 class="section-title mb-6">Testmonial</h6>
@@ -465,10 +466,11 @@
                 </div>
             </div>
         </div> <!-- end of container -->
-    </section> <!-- end of testimonial section -->
+    </section>  --}}
+    <!-- end of testimonial section -->
 
     <!-- contact section -->
-    <section class="section" id="contact">
+    {{-- <section class="section" id="contact">
         <div class="container text-center">
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
@@ -491,7 +493,8 @@
                 </div>
             </form><!-- end of contact form -->
         </div><!-- end of container -->
-    </section><!-- end of contact section -->
+    </section> --}}
+    <!-- end of contact section -->
 
     <!-- footer -->
     <div class="container">
@@ -503,7 +506,7 @@
                 <a href="mailto:zailyanzali@gmail.com" class="link"><i class="ti-email"></i></a>
                 <a href="https://linkedin.com/in/ferdiansyah7179" class="link"><i class="ti-linkedin"></i></a>
                 <a href="https://www.instagram.com/ferdiansyah_7179" class="link"><i class="ti-instagram"></i></a>
-                <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                {{-- <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a> --}}
             </div>
         </footer>
     </div> <!-- end of page footer -->

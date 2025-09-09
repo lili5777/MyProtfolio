@@ -25,7 +25,7 @@ class ProfilController extends Controller
             'name' => 'required|string|max:255',
             'job' => 'required|string|max:255',
             'about' => 'required|string|max:1000',
-            'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5120', // 5MB
+            'photo' => 'nullable|image|max:10120', // 10MB
             'document' => 'nullable|file|mimes:pdf,doc,docx|max:10240', // 10MB
         ]);
 

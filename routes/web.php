@@ -73,6 +73,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('blogs', BlogController::class);
     Route::post('/blogs/{id}/komentar', [BlogController::class, 'komentar'])->name('blogs.komentar');
     Route::post('/blogs/{id}/like', [BlogController::class, 'like'])->name('blogs.like');
+    Route::get('/blog/{id}', [BlogController::class, 'showuser'])->name('blogs.showuser');
 });
 
 require __DIR__ . '/auth.php';

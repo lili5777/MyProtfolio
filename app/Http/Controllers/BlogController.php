@@ -143,6 +143,20 @@ class BlogController extends Controller
         }
     }
 
+    public function showuser(Blog $blog)
+    {
+        try {
+            // Tambah view count
+            $blog->increment('view');
+
+            return view('blogshow', compact('blog'));
+        } catch (\Exception $e) {
+            Log::error('Error menampilkan blog: ' . $e->getMessage());
+            return redirect('/')
+                ->with('error', 'Gagal menampilkan blog. Silakan coba lagi.');
+        }
+    }
+
     public function edit(Blog $blog)
     {
         try {
